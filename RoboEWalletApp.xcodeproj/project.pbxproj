@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20820C942C05FD9700C068D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C932C05FD9700C068D8 /* LoginView.swift */; };
+		20820C972C0600E900C068D8 /* ColorConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C962C0600E900C068D8 /* ColorConsts.swift */; };
+		20820C992C06144C00C068D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C982C06144C00C068D8 /* LoginViewModel.swift */; };
+		20820C9D2C061AAB00C068D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C9C2C061AAB00C068D8 /* HomeView.swift */; };
+		20820C9F2C061BBE00C068D8 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C9E2C061BBE00C068D8 /* Tabs.swift */; };
+		20820CA12C061D4700C068D8 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA02C061D4700C068D8 /* MarketView.swift */; };
+		20820CA32C0C925D00C068D8 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA22C0C925D00C068D8 /* InsightsView.swift */; };
+		20820CA52C0C929E00C068D8 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA42C0C929E00C068D8 /* WalletView.swift */; };
+		20820CA72C0C92E900C068D8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA62C0C92E900C068D8 /* ProfileView.swift */; };
+		20820CAA2C0C97C400C068D8 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA92C0C97C400C068D8 /* Widgets.swift */; };
+		20820CAC2C0CA69300C068D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */; };
+		20820CAE2C0D20F400C068D8 /* TrendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAD2C0D20F400C068D8 /* TrendModel.swift */; };
 		208FEAED2C05C49F00CE3D72 /* RoboEWalletAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */; };
-		208FEAEF2C05C49F00CE3D72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEAEE2C05C49F00CE3D72 /* ContentView.swift */; };
 		208FEAF12C05C4A000CE3D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208FEAF02C05C4A000CE3D72 /* Assets.xcassets */; };
 		208FEAF42C05C4A000CE3D72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208FEAF32C05C4A000CE3D72 /* Preview Assets.xcassets */; };
-		208FEAF62C05C4A000CE3D72 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEAF52C05C4A000CE3D72 /* Persistence.swift */; };
 		208FEAF92C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 208FEAF72C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld */; };
 		208FEB032C05C4A100CE3D72 /* RoboEWalletAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEB022C05C4A100CE3D72 /* RoboEWalletAppTests.swift */; };
 		208FEB0D2C05C4A100CE3D72 /* RoboEWalletAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEB0C2C05C4A100CE3D72 /* RoboEWalletAppUITests.swift */; };
@@ -36,12 +46,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20820C932C05FD9700C068D8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		20820C962C0600E900C068D8 /* ColorConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConsts.swift; sourceTree = "<group>"; };
+		20820C982C06144C00C068D8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		20820C9C2C061AAB00C068D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		20820C9E2C061BBE00C068D8 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		20820CA02C061D4700C068D8 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
+		20820CA22C0C925D00C068D8 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		20820CA42C0C929E00C068D8 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		20820CA62C0C92E900C068D8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		20820CA92C0C97C400C068D8 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
+		20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		20820CAD2C0D20F400C068D8 /* TrendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendModel.swift; sourceTree = "<group>"; };
 		208FEAE92C05C49F00CE3D72 /* RoboEWalletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboEWalletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboEWalletAppApp.swift; sourceTree = "<group>"; };
-		208FEAEE2C05C49F00CE3D72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		208FEAF02C05C4A000CE3D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		208FEAF32C05C4A000CE3D72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		208FEAF52C05C4A000CE3D72 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		208FEAF82C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoboEWalletApp.xcdatamodel; sourceTree = "<group>"; };
 		208FEAFE2C05C4A100CE3D72 /* RoboEWalletAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboEWalletAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		208FEB022C05C4A100CE3D72 /* RoboEWalletAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboEWalletAppTests.swift; sourceTree = "<group>"; };
@@ -75,6 +95,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20820C902C05FC5C00C068D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20820CAD2C0D20F400C068D8 /* TrendModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20820C912C05FC6100C068D8 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				20820C982C06144C00C068D8 /* LoginViewModel.swift */,
+				20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		20820C922C05FC6D00C068D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20820C932C05FD9700C068D8 /* LoginView.swift */,
+				20820C9C2C061AAB00C068D8 /* HomeView.swift */,
+				20820C9E2C061BBE00C068D8 /* Tabs.swift */,
+				20820CA02C061D4700C068D8 /* MarketView.swift */,
+				20820CA22C0C925D00C068D8 /* InsightsView.swift */,
+				20820CA42C0C929E00C068D8 /* WalletView.swift */,
+				20820CA62C0C92E900C068D8 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20820C952C0600DE00C068D8 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				20820C962C0600E900C068D8 /* ColorConsts.swift */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		20820CA82C0C97B200C068D8 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				20820CA92C0C97C400C068D8 /* Widgets.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		208FEAE02C05C49F00CE3D72 = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +165,13 @@
 		208FEAEB2C05C49F00CE3D72 /* RoboEWalletApp */ = {
 			isa = PBXGroup;
 			children = (
+				20820CA82C0C97B200C068D8 /* Widgets */,
+				20820C952C0600DE00C068D8 /* Consts */,
+				20820C922C05FC6D00C068D8 /* View */,
+				20820C912C05FC6100C068D8 /* Viewmodel */,
+				20820C902C05FC5C00C068D8 /* Model */,
 				208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */,
-				208FEAEE2C05C49F00CE3D72 /* ContentView.swift */,
 				208FEAF02C05C4A000CE3D72 /* Assets.xcassets */,
-				208FEAF52C05C4A000CE3D72 /* Persistence.swift */,
 				208FEAF72C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld */,
 				208FEAF22C05C4A000CE3D72 /* Preview Content */,
 			);
@@ -263,10 +333,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20820C942C05FD9700C068D8 /* LoginView.swift in Sources */,
+				20820CA52C0C929E00C068D8 /* WalletView.swift in Sources */,
+				20820C972C0600E900C068D8 /* ColorConsts.swift in Sources */,
+				20820CAA2C0C97C400C068D8 /* Widgets.swift in Sources */,
+				20820CA12C061D4700C068D8 /* MarketView.swift in Sources */,
 				208FEAF92C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld in Sources */,
-				208FEAF62C05C4A000CE3D72 /* Persistence.swift in Sources */,
-				208FEAEF2C05C49F00CE3D72 /* ContentView.swift in Sources */,
+				20820C9D2C061AAB00C068D8 /* HomeView.swift in Sources */,
+				20820C9F2C061BBE00C068D8 /* Tabs.swift in Sources */,
+				20820CAC2C0CA69300C068D8 /* HomeViewModel.swift in Sources */,
+				20820CA32C0C925D00C068D8 /* InsightsView.swift in Sources */,
+				20820C992C06144C00C068D8 /* LoginViewModel.swift in Sources */,
+				20820CA72C0C92E900C068D8 /* ProfileView.swift in Sources */,
 				208FEAED2C05C49F00CE3D72 /* RoboEWalletAppApp.swift in Sources */,
+				20820CAE2C0D20F400C068D8 /* TrendModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

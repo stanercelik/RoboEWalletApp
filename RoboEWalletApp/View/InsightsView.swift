@@ -9,7 +9,18 @@ import SwiftUI
 
 struct InsightsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ZStack{
+                Color.indigo
+                Text("InsightView")
+                    .font(.largeTitle)
+                    .padding()
+            }
+            .ignoresSafeArea()
+        }
+        
+        .navigationTitle("Insights")
+        
     }
 }
 

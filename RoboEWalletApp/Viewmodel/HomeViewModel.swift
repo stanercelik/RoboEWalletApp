@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct HomeViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class HomeViewModel: ObservableObject {
+    @Published var isLearnMorePressed: Bool = false
+    
+    func learnModeButtonPressed() {
+        print("Learn More Button Pressed")
+        
+        isLearnMorePressed = true
     }
-}
-
-#Preview {
-    HomeViewModel()
 }
