@@ -16,5 +16,4 @@ struct TrendModel {
     var color : Color
     var softColor : Color
     var iconName : String
-    
 }

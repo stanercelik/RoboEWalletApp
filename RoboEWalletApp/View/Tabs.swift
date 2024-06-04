@@ -20,8 +20,8 @@ struct CustomTabBarView: View {
                 }
             }
         }
-        .padding(EdgeInsets(top: 32, leading: 38, bottom: 32, trailing: 38))
-        .background(Color.white)
+        .padding(EdgeInsets(top: 28, leading: 36, bottom: 28, trailing: 36))
+        .background(Color.clear)
         .roundedCorner(40, corners: [.topLeft, .topRight])
         .shadow(color: .gray.opacity(0.2) ,radius: 20)
     }

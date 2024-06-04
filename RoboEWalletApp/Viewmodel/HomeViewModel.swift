@@ -8,11 +8,24 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    @Published var isLearnMorePressed: Bool = false
     
     func learnModeButtonPressed() {
         print("Learn More Button Pressed")
-        
-        isLearnMorePressed = true
+    }
+    
+    func calculateButtonPressed() {
+        print("Calculate Button Pressed")
+    }
+    
+    func compareButtonPressed() {
+        print("Compare Button Pressed")
+    }
+    
+    func convertButtonPressed() {
+        print("Convert Button Pressed")
+    }
+    
+    func trendAlertButtonPressed() {
+        print("Trend Alert Button Pressed")
     }
 }

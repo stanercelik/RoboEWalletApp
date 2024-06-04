@@ -12,6 +12,7 @@ extension Color {
     static let backgroundColor = Color(red: 250/255, green: 248/255, blue: 248/255)
     static let homeScreenBackground = Color(red: 255/255, green: 154/255, blue: 178/255)
     static let homeScreenBaseBackground = Color(red: 247/255, green: 247/255, blue: 250/255)
+    static let marketScreenBackground = Color(red: 243/255, green: 245/255, blue: 246/255)
     
     static let softOrange = Color(red: 255/255, green: 235/255, blue: 228/255)
     static let appOrange = Color(red: 247/255, green: 147/255, blue: 26/255)

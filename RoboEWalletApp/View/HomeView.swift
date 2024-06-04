@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-
 struct HomeView: View {
     @StateObject private var viewmodel = HomeViewModel()
     
@@ -101,7 +100,8 @@ struct TrendingView : View {
             Text("Trending")
                 .font(.title)
                 .fontWeight(.medium)
-                .padding()
+                .padding(.horizontal)
+                .padding(.top, 8)
             
             ScrollView{
                 ForEach(trends, id: \.name) { trend in
@@ -147,6 +147,10 @@ struct ButtonsView : View {
         HStack(){
             VStack(alignment: .leading){
                 Pill(iconColor: .appRed, iconSoftColor: .softRed, iconName: "calculator_icon", buttonName: "Calculator")
+                    .gesture(TapGesture()
+                        .onEnded({ _ in
+                            print("sad")
+                        }))
                 
                 Pill(iconColor: .appOrange, iconSoftColor: .softOrange, iconName: "convert_icon", buttonName: "Convert")
             }
