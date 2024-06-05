@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20820C942C05FD9700C068D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C932C05FD9700C068D8 /* LoginView.swift */; };
-		20820C972C0600E900C068D8 /* ColorConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C962C0600E900C068D8 /* ColorConsts.swift */; };
 		20820C992C06144C00C068D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C982C06144C00C068D8 /* LoginViewModel.swift */; };
 		20820C9D2C061AAB00C068D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C9C2C061AAB00C068D8 /* HomeView.swift */; };
 		20820C9F2C061BBE00C068D8 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C9E2C061BBE00C068D8 /* Tabs.swift */; };
@@ -21,6 +20,9 @@
 		20820CAE2C0D20F400C068D8 /* TrendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAD2C0D20F400C068D8 /* TrendModel.swift */; };
 		20820CB02C0D2E6000C068D8 /* CoinCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAF2C0D2E6000C068D8 /* CoinCircles.swift */; };
 		20820CB22C0FD24700C068D8 /* MarketCoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CB12C0FD24700C068D8 /* MarketCoinModel.swift */; };
+		20820CB42C1042D900C068D8 /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CB32C1042D900C068D8 /* MarketViewModel.swift */; };
+		20820CB62C10499900C068D8 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CB52C10499900C068D8 /* TransactionModel.swift */; };
+		20820CBA2C1089E100C068D8 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20820CB92C1089E100C068D8 /* AppColors.xcassets */; };
 		208FEAED2C05C49F00CE3D72 /* RoboEWalletAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */; };
 		208FEAF12C05C4A000CE3D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208FEAF02C05C4A000CE3D72 /* Assets.xcassets */; };
 		208FEAF42C05C4A000CE3D72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208FEAF32C05C4A000CE3D72 /* Preview Assets.xcassets */; };
@@ -49,7 +51,6 @@
 
 /* Begin PBXFileReference section */
 		20820C932C05FD9700C068D8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		20820C962C0600E900C068D8 /* ColorConsts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConsts.swift; sourceTree = "<group>"; };
 		20820C982C06144C00C068D8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		20820C9C2C061AAB00C068D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		20820C9E2C061BBE00C068D8 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		20820CAD2C0D20F400C068D8 /* TrendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendModel.swift; sourceTree = "<group>"; };
 		20820CAF2C0D2E6000C068D8 /* CoinCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCircles.swift; sourceTree = "<group>"; };
 		20820CB12C0FD24700C068D8 /* MarketCoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCoinModel.swift; sourceTree = "<group>"; };
+		20820CB32C1042D900C068D8 /* MarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewModel.swift; sourceTree = "<group>"; };
+		20820CB52C10499900C068D8 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		20820CB92C1089E100C068D8 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		208FEAE92C05C49F00CE3D72 /* RoboEWalletApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboEWalletApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboEWalletAppApp.swift; sourceTree = "<group>"; };
 		208FEAF02C05C4A000CE3D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,48 +108,131 @@
 			children = (
 				20820CAD2C0D20F400C068D8 /* TrendModel.swift */,
 				20820CB12C0FD24700C068D8 /* MarketCoinModel.swift */,
+				20820CB52C10499900C068D8 /* TransactionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		20820C912C05FC6100C068D8 /* Viewmodel */ = {
+		20820C922C05FC6D00C068D8 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				20820C982C06144C00C068D8 /* LoginViewModel.swift */,
-				20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */,
+				20820CC02C109CC400C068D8 /* MainScreen */,
+				20820CBC2C109C6100C068D8 /* LoginScreen */,
 			);
-			path = Viewmodel;
-			sourceTree = "<group>";
-		};
-		20820C922C05FC6D00C068D8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				20820C932C05FD9700C068D8 /* LoginView.swift */,
-				20820C9C2C061AAB00C068D8 /* HomeView.swift */,
-				20820C9E2C061BBE00C068D8 /* Tabs.swift */,
-				20820CA02C061D4700C068D8 /* MarketView.swift */,
-				20820CA22C0C925D00C068D8 /* InsightsView.swift */,
-				20820CA42C0C929E00C068D8 /* WalletView.swift */,
-				20820CA62C0C92E900C068D8 /* ProfileView.swift */,
-			);
-			path = View;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		20820C952C0600DE00C068D8 /* Consts */ = {
 			isa = PBXGroup;
 			children = (
-				20820C962C0600E900C068D8 /* ColorConsts.swift */,
 				20820CAF2C0D2E6000C068D8 /* CoinCircles.swift */,
 			);
 			path = Consts;
 			sourceTree = "<group>";
 		};
-		20820CA82C0C97B200C068D8 /* Widgets */ = {
+		20820CA82C0C97B200C068D8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				20820CA92C0C97C400C068D8 /* Widgets.swift */,
 			);
-			path = Widgets;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		20820CB82C10881E00C068D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				20820C952C0600DE00C068D8 /* Consts */,
+				20820CB92C1089E100C068D8 /* AppColors.xcassets */,
+				208FEAF02C05C4A000CE3D72 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		20820CBB2C109C2C00C068D8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		20820CBC2C109C6100C068D8 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820C932C05FD9700C068D8 /* LoginView.swift */,
+				20820C982C06144C00C068D8 /* LoginViewModel.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		20820CBD2C109C7F00C068D8 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */,
+				20820C9C2C061AAB00C068D8 /* HomeView.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		20820CBE2C109C8800C068D8 /* MarketScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820CB32C1042D900C068D8 /* MarketViewModel.swift */,
+				20820CA02C061D4700C068D8 /* MarketView.swift */,
+			);
+			path = MarketScreen;
+			sourceTree = "<group>";
+		};
+		20820CBF2C109CA600C068D8 /* WalletScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820CA42C0C929E00C068D8 /* WalletView.swift */,
+			);
+			path = WalletScreen;
+			sourceTree = "<group>";
+		};
+		20820CC02C109CC400C068D8 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820CC22C109CEB00C068D8 /* ProfileScreen */,
+				20820CC12C109CE000C068D8 /* InsightsScreen */,
+				20820CBF2C109CA600C068D8 /* WalletScreen */,
+				20820CBE2C109C8800C068D8 /* MarketScreen */,
+				20820CBD2C109C7F00C068D8 /* HomeScreen */,
+				20820C9E2C061BBE00C068D8 /* Tabs.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		20820CC12C109CE000C068D8 /* InsightsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820CA22C0C925D00C068D8 /* InsightsView.swift */,
+			);
+			path = InsightsScreen;
+			sourceTree = "<group>";
+		};
+		20820CC22C109CEB00C068D8 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				20820CA62C0C92E900C068D8 /* ProfileView.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		20820CC32C109D0A00C068D8 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		20820CC42C109D3200C068D8 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				208FEAF72C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		208FEAE02C05C49F00CE3D72 = {
@@ -171,14 +258,13 @@
 		208FEAEB2C05C49F00CE3D72 /* RoboEWalletApp */ = {
 			isa = PBXGroup;
 			children = (
-				20820CA82C0C97B200C068D8 /* Widgets */,
-				20820C952C0600DE00C068D8 /* Consts */,
-				20820C922C05FC6D00C068D8 /* View */,
-				20820C912C05FC6100C068D8 /* Viewmodel */,
+				20820CC42C109D3200C068D8 /* Database */,
+				20820CC32C109D0A00C068D8 /* NetworkLayer */,
+				20820CBB2C109C2C00C068D8 /* App */,
+				20820CB82C10881E00C068D8 /* Resources */,
+				20820CA82C0C97B200C068D8 /* Components */,
+				20820C922C05FC6D00C068D8 /* Screen */,
 				20820C902C05FC5C00C068D8 /* Model */,
-				208FEAEC2C05C49F00CE3D72 /* RoboEWalletAppApp.swift */,
-				208FEAF02C05C4A000CE3D72 /* Assets.xcassets */,
-				208FEAF72C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld */,
 				208FEAF22C05C4A000CE3D72 /* Preview Content */,
 			);
 			path = RoboEWalletApp;
@@ -315,6 +401,7 @@
 			files = (
 				208FEAF42C05C4A000CE3D72 /* Preview Assets.xcassets in Resources */,
 				208FEAF12C05C4A000CE3D72 /* Assets.xcassets in Resources */,
+				20820CBA2C1089E100C068D8 /* AppColors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,9 +426,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20820CB62C10499900C068D8 /* TransactionModel.swift in Sources */,
 				20820C942C05FD9700C068D8 /* LoginView.swift in Sources */,
 				20820CA52C0C929E00C068D8 /* WalletView.swift in Sources */,
-				20820C972C0600E900C068D8 /* ColorConsts.swift in Sources */,
+				20820CB42C1042D900C068D8 /* MarketViewModel.swift in Sources */,
 				20820CAA2C0C97C400C068D8 /* Widgets.swift in Sources */,
 				20820CA12C061D4700C068D8 /* MarketView.swift in Sources */,
 				208FEAF92C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld in Sources */,
