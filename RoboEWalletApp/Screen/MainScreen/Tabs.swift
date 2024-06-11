@@ -21,9 +21,9 @@ struct CustomTabBarView: View {
             }
         }
         .padding(EdgeInsets(top: 28, leading: 38, bottom: 28, trailing: 38))
-        .background(Color.whiteText)
+        .background(Color.customWhite)
         .roundedCorner(40, corners: [.topLeft, .topRight])
-        .shadow(color: .appSecondaryText.opacity(0.2) ,radius: 20)
+        .shadow(color: .gray.opacity(0.2) ,radius: 20)
     }
 }
 
@@ -35,7 +35,7 @@ struct Tabs: View {
             ZStack(alignment: .bottom) {
                 TabView(selection: $selectedTab) {
                     HomeView().tag(0)
-                    MarketView(searchText: "").tag(1)
+                    MarketView().tag(1)
                     WalletView().tag(2)
                     InsightsView().tag(3)
                     ProfileView().tag(4)
@@ -69,7 +69,7 @@ struct TabBarItem: View {
                 .resizable()
                 .frame(width: 28, height: 28)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(selectedTab == selectedIndex ? .blackText : .appSecondaryText)
+                .foregroundColor(selectedTab == selectedIndex ? .blackText : .customLightGray)
         }
     }
 }

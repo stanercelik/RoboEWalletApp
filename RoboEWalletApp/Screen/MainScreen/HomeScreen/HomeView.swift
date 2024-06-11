@@ -10,35 +10,34 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewmodel = HomeViewModel()
+    let trends = [
+        TrendModel(name: "Bitcoin", code: "BTC", price: "$32,128.80", change: 2.5, color: .customOrange, softColor: .softOrange, iconName: "bitcoin"),
+        TrendModel(name: "Neo", code: "NEO", price: "$13,221.55", change: 2.2, color: .customMint, softColor: .softMint, iconName: "neo"),
+        TrendModel(name: "Achain", code: "ACT", price: "$28,312.22", change: -2.2, color: .customPurple, softColor: .softPurple, iconName: "achain"),
+        TrendModel(name: "Vechain", code: "VCH", price: "$14,112.86", change: 2.5, color: .customPurple, softColor: .softPurple, iconName: "vechain"),
+        TrendModel(name: "Vitae", code: "VTA", price: "$14,112.86", change: 2.2, color: .customMint, softColor: .softMint, iconName: "vitae")
+    ]
     
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView()
-                HeaderView(viewmodel: viewmodel)
-                BaseView()
+                backgroundView
+                headerView
+                baseView
             }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }
-}
-
-struct BackgroundView : View {
-    var body: some View {
+    var backgroundView: some View {
         Color.homeScreenBackground
             .ignoresSafeArea()
     }
-}
-
-struct HeaderView : View {
     
-    var viewmodel : HomeViewModel
-    
-    var body: some View {
+    var headerView: some View {
         VStack(alignment: .leading, spacing: 12) {
             
-            HeaderWithEllipsis(text: "Home", color: .whiteText)
+            HeaderWithEllipsis(text: "Home", color: .whiteText, backgroundColor: .customWhite)
             
             HStack (alignment: .top){
                 VStack (alignment: .leading){
@@ -58,15 +57,13 @@ struct HeaderView : View {
         }
         .padding(.horizontal)
     }
-}
-
-struct BaseView : View {
-    var body: some View {
+    
+    var baseView: some View {
         VStack {
             Spacer()
             VStack (alignment: .leading){
-                ButtonsView()
-                TrendingView()
+                buttonsView
+                trendingView
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.64)
@@ -76,17 +73,8 @@ struct BaseView : View {
         .padding(.vertical, 8)
         .ignoresSafeArea()
     }
-}
-
-struct TrendingView : View {
-    let trends = [
-        TrendModel(name: "Bitcoin", code: "BTC", price: "$32,128.80", change: 2.5, color: .customOrange, softColor: .softOrange, iconName: "bitcoin"),
-        TrendModel(name: "Neo", code: "NEO", price: "$13,221.55", change: 2.2, color: .customMint, softColor: .softMint, iconName: "neo"),
-        TrendModel(name: "Achain", code: "ACT", price: "$28,312.22", change: -2.2, color: .customPurple, softColor: .softPurple, iconName: "achain"),
-        TrendModel(name: "Vechain", code: "VCH", price: "$14,112.86", change: 2.5, color: .customPurple, softColor: .softPurple, iconName: "vechain"),
-        TrendModel(name: "Vitae", code: "VTA", price: "$14,112.86", change: 2.2, color: .customMint, softColor: .softMint, iconName: "vitae")
-    ]
-    var body: some View {
+    
+    var trendingView: some View {
         VStack (alignment: .leading){
             Text("Trending")
                 .foregroundStyle(Color.blackText)
@@ -103,6 +91,27 @@ struct TrendingView : View {
             .scrollIndicators(.hidden)
             
         }
+    }
+    
+    var buttonsView: some View {
+        HStack(){
+            VStack(alignment: .leading){
+                Pill(iconColor: .customRed, iconSoftColor: .softRed, iconName: "calculator_icon", buttonName: "Calculator")
+                    .gesture(TapGesture()
+                        .onEnded({ _ in
+                            print("sad")
+                        }))
+                
+                Pill(iconColor: .customOrange, iconSoftColor: .softOrange, iconName: "convert_icon", buttonName: "Convert")
+            }
+            Spacer()
+            VStack(alignment: .leading){
+                Pill(iconColor: .customBlue, iconSoftColor: .softBlue, iconName: "compare_icon", buttonName: "Compare")
+                
+                Pill(iconColor: .customPurple, iconSoftColor: .softPurple, iconName: "price_alert_icon", buttonName: "Price Alert")
+            }
+        }
+        .padding(.init(top: 24, leading: 32, bottom: 0, trailing: 52))
     }
 }
 
@@ -137,29 +146,6 @@ struct TrendRow: View {
     }
 }
 
-struct ButtonsView : View {
-    var body: some View{
-        HStack(){
-            VStack(alignment: .leading){
-                Pill(iconColor: .customRed, iconSoftColor: .softRed, iconName: "calculator_icon", buttonName: "Calculator")
-                    .gesture(TapGesture()
-                        .onEnded({ _ in
-                            print("sad")
-                        }))
-                
-                Pill(iconColor: .customOrange, iconSoftColor: .softOrange, iconName: "convert_icon", buttonName: "Convert")
-            }
-            Spacer()
-            VStack(alignment: .leading){
-                Pill(iconColor: .customBlue, iconSoftColor: .softBlue, iconName: "compare_icon", buttonName: "Compare")
-                
-                Pill(iconColor: .customPurple, iconSoftColor: .softPurple, iconName: "price_alert_icon", buttonName: "Price Alert")
-            }
-        }
-        .padding(.init(top: 24, leading: 32, bottom: 0, trailing: 52))
-    }
-}
-
 struct Pill : View {
     let iconColor: Color
     let iconSoftColor : Color
@@ -177,31 +163,30 @@ struct Pill : View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
-
 struct HeaderWithEllipsis: View {
-    var text : String
-    var color : Color
+    var text: String
+    var color: Color
+    var backgroundColor: Color
     var body: some View {
         HStack (alignment: .center){
             Text(text)
-                .foregroundStyle(.whiteText)
                 .font(.largeTitle)
                 .foregroundStyle(color)
                 .bold()
             
             Spacer()
             
-            CircleIcon(softColor: .whiteText, color: .blackText, iconName: "ellipsis", frame: 45, padding: 12, isSystemIcon: true)
+            CircleIcon(softColor: backgroundColor, color: .blackText, iconName: "ellipsis", frame: 45, padding: 12, isSystemIcon: true)
         }
     }
 }
 
 
-// EnviromentObject
-// Enviroment
-// Ekrandan ekrana data taşıma
+#Preview{
+    HomeView()
+}
+
+
+
+
+

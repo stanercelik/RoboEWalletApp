@@ -12,6 +12,7 @@ struct RoboEWalletAppApp: App {
     var body: some Scene {
         WindowGroup {
             LoginView()
+                .environment(\.font, Font.custom("Poppins", size: 14))
         }
     }
 }

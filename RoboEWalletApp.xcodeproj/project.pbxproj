@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		206780552C11F69D00FBDCEA /* CircleIconComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206780542C11F69D00FBDCEA /* CircleIconComponent.swift */; };
+		206780582C11F6DE00FBDCEA /* SpesificCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206780572C11F6DE00FBDCEA /* SpesificCornerRadius.swift */; };
+		2067805A2C11F70500FBDCEA /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206780592C11F70500FBDCEA /* CustomButton.swift */; };
 		20820C942C05FD9700C068D8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C932C05FD9700C068D8 /* LoginView.swift */; };
 		20820C992C06144C00C068D8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C982C06144C00C068D8 /* LoginViewModel.swift */; };
 		20820C9D2C061AAB00C068D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820C9C2C061AAB00C068D8 /* HomeView.swift */; };
@@ -15,7 +18,6 @@
 		20820CA32C0C925D00C068D8 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA22C0C925D00C068D8 /* InsightsView.swift */; };
 		20820CA52C0C929E00C068D8 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA42C0C929E00C068D8 /* WalletView.swift */; };
 		20820CA72C0C92E900C068D8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA62C0C92E900C068D8 /* ProfileView.swift */; };
-		20820CAA2C0C97C400C068D8 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CA92C0C97C400C068D8 /* Widgets.swift */; };
 		20820CAC2C0CA69300C068D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */; };
 		20820CAE2C0D20F400C068D8 /* TrendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAD2C0D20F400C068D8 /* TrendModel.swift */; };
 		20820CB02C0D2E6000C068D8 /* CoinCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20820CAF2C0D2E6000C068D8 /* CoinCircles.swift */; };
@@ -30,6 +32,7 @@
 		208FEB032C05C4A100CE3D72 /* RoboEWalletAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEB022C05C4A100CE3D72 /* RoboEWalletAppTests.swift */; };
 		208FEB0D2C05C4A100CE3D72 /* RoboEWalletAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEB0C2C05C4A100CE3D72 /* RoboEWalletAppUITests.swift */; };
 		208FEB0F2C05C4A100CE3D72 /* RoboEWalletAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FEB0E2C05C4A100CE3D72 /* RoboEWalletAppUITestsLaunchTests.swift */; };
+		20FB326B2C124FB200B9F69F /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FB326A2C124FB200B9F69F /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		206780542C11F69D00FBDCEA /* CircleIconComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconComponent.swift; sourceTree = "<group>"; };
+		206780572C11F6DE00FBDCEA /* SpesificCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpesificCornerRadius.swift; sourceTree = "<group>"; };
+		206780592C11F70500FBDCEA /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		2067805B2C11F78D00FBDCEA /* Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Notes.md; sourceTree = "<group>"; };
 		20820C932C05FD9700C068D8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		20820C982C06144C00C068D8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		20820C9C2C061AAB00C068D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -58,7 +65,6 @@
 		20820CA22C0C925D00C068D8 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		20820CA42C0C929E00C068D8 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		20820CA62C0C92E900C068D8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		20820CA92C0C97C400C068D8 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		20820CAB2C0CA69300C068D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		20820CAD2C0D20F400C068D8 /* TrendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendModel.swift; sourceTree = "<group>"; };
 		20820CAF2C0D2E6000C068D8 /* CoinCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCircles.swift; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 		208FEB082C05C4A100CE3D72 /* RoboEWalletAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboEWalletAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		208FEB0C2C05C4A100CE3D72 /* RoboEWalletAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboEWalletAppUITests.swift; sourceTree = "<group>"; };
 		208FEB0E2C05C4A100CE3D72 /* RoboEWalletAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboEWalletAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		20FB326A2C124FB200B9F69F /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +110,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		206780562C11F6C400FBDCEA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				206780572C11F6DE00FBDCEA /* SpesificCornerRadius.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		20820C902C05FC5C00C068D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				20820CAD2C0D20F400C068D8 /* TrendModel.swift */,
 				20820CB12C0FD24700C068D8 /* MarketCoinModel.swift */,
 				20820CB52C10499900C068D8 /* TransactionModel.swift */,
+				20FB326A2C124FB200B9F69F /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,7 +149,8 @@
 		20820CA82C0C97B200C068D8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				20820CA92C0C97C400C068D8 /* Widgets.swift */,
+				206780542C11F69D00FBDCEA /* CircleIconComponent.swift */,
+				206780592C11F70500FBDCEA /* CustomButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +255,7 @@
 		208FEAE02C05C49F00CE3D72 = {
 			isa = PBXGroup;
 			children = (
+				2067805B2C11F78D00FBDCEA /* Notes.md */,
 				208FEAEB2C05C49F00CE3D72 /* RoboEWalletApp */,
 				208FEB012C05C4A100CE3D72 /* RoboEWalletAppTests */,
 				208FEB0B2C05C4A100CE3D72 /* RoboEWalletAppUITests */,
@@ -258,6 +276,7 @@
 		208FEAEB2C05C49F00CE3D72 /* RoboEWalletApp */ = {
 			isa = PBXGroup;
 			children = (
+				206780562C11F6C400FBDCEA /* Utils */,
 				20820CC42C109D3200C068D8 /* Database */,
 				20820CC32C109D0A00C068D8 /* NetworkLayer */,
 				20820CBB2C109C2C00C068D8 /* App */,
@@ -430,8 +449,9 @@
 				20820C942C05FD9700C068D8 /* LoginView.swift in Sources */,
 				20820CA52C0C929E00C068D8 /* WalletView.swift in Sources */,
 				20820CB42C1042D900C068D8 /* MarketViewModel.swift in Sources */,
-				20820CAA2C0C97C400C068D8 /* Widgets.swift in Sources */,
+				2067805A2C11F70500FBDCEA /* CustomButton.swift in Sources */,
 				20820CA12C061D4700C068D8 /* MarketView.swift in Sources */,
+				206780552C11F69D00FBDCEA /* CircleIconComponent.swift in Sources */,
 				208FEAF92C05C4A000CE3D72 /* RoboEWalletApp.xcdatamodeld in Sources */,
 				20820C9D2C061AAB00C068D8 /* HomeView.swift in Sources */,
 				20820C9F2C061BBE00C068D8 /* Tabs.swift in Sources */,
@@ -441,7 +461,9 @@
 				20820CA72C0C92E900C068D8 /* ProfileView.swift in Sources */,
 				20820CB02C0D2E6000C068D8 /* CoinCircles.swift in Sources */,
 				208FEAED2C05C49F00CE3D72 /* RoboEWalletAppApp.swift in Sources */,
+				206780582C11F6DE00FBDCEA /* SpesificCornerRadius.swift in Sources */,
 				20820CB22C0FD24700C068D8 /* MarketCoinModel.swift in Sources */,
+				20FB326B2C124FB200B9F69F /* NewsModel.swift in Sources */,
 				20820CAE2C0D20F400C068D8 /* TrendModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

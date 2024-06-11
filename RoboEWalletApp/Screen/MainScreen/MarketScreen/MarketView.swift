@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MarketView: View {
     @StateObject private var viewModel = MarketViewModel()
-    @State var searchText : String
     let cryptoData = [
         MarketCoinModel(name: "Bitcoin", price: "$32,128.80", change: 2.5, color: .customOrange, softColor: .softOrange, iconName: "bitcoin", marketCap: "893.43"),
         MarketCoinModel(name: "Neo",  price: "$13,221.55", change: 2.2, color: .customMint, softColor: .softMint, iconName: "neo", marketCap: "893.43"),
@@ -43,8 +42,8 @@ struct MarketView: View {
     var backgroundView : some View {
         LinearGradient(
             gradient: Gradient(colors: [
-                Color.customPurple.opacity(0.3),
-                Color.softBlue.opacity(0.1),
+                Color.customPurple.opacity(0.23),
+                Color.softBlue.opacity(0.4),
                 Color.appBackground]),
             startPoint: .topLeading,
             endPoint: .bottomTrailing
@@ -86,7 +85,7 @@ struct MarketView: View {
                         .padding( .leading, 6)
 
                     
-                    TextField("Search", text: $searchText)
+                    TextField("Search", text: $viewModel.searchText)
                         .foregroundStyle(.blackText)
                         .padding(2)
                         .padding(.horizontal, 6)
@@ -106,7 +105,7 @@ struct MarketView: View {
             }
             .padding(.horizontal)
             .frame(height: 55)
-            .background(Color.whiteText)
+            .background(Color.customWhite)
             .cornerRadius(25)
         }
         .padding(.vertical)
@@ -124,7 +123,7 @@ struct MarketView: View {
 }
 
 #Preview {
-    MarketView(searchText: "")
+    MarketView()
 }
 
 
@@ -144,7 +143,7 @@ struct SegmentButton: View {
                     .font(.subheadline)
                     .fontWeight(.medium)
             }
-            .padding(.vertical, 30)
+            .padding(.vertical, 26)
             .frame(width: UIScreen.main.bounds.width / 3.7)
         }
         .background(Color.customWhite)

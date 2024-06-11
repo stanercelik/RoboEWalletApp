@@ -1,10 +1,11 @@
 //
-//  widgets.swift
+//  CustomButton.swift
 //  RoboEWalletApp
 //
-//  Created by Taner Çelik on 2.06.2024.
+//  Created by Taner Çelik on 6.06.2024.
 //
 
+import Foundation
 import SwiftUI
 
 // CustomButton
@@ -28,5 +29,3 @@ struct CustomButton: View {
         .cornerRadius(40)
     }
 }
-
-
