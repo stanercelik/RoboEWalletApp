@@ -6,37 +6,29 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+import Charts
 
 struct MarketView: View {
     @StateObject private var viewModel = MarketViewModel()
-    let cryptoData = [
-        MarketCoinModel(name: "Bitcoin", price: "$32,128.80", change: 2.5, color: .customOrange, softColor: .softOrange, iconName: "bitcoin", marketCap: "893.43"),
-        MarketCoinModel(name: "Neo",  price: "$13,221.55", change: 2.2, color: .customMint, softColor: .softMint, iconName: "neo", marketCap: "893.43"),
-        MarketCoinModel(name: "Achain", price: "$28,312.22", change: -2.2, color: .customPurple, softColor: .softPurple, iconName: "achain", marketCap: "893.43"),
-        MarketCoinModel(name: "Vechain", price: "$14,112.86", change: 2.5, color: .customPurple, softColor: .softPurple, iconName: "vechain", marketCap: "893.43"),
-        MarketCoinModel(name: "Vitae", price: "$14,112.86", change: 2.2, color: .customMint, softColor: .softMint, iconName: "vitae", marketCap: "893.43"),
-        MarketCoinModel(name: "Bitcoin", price: "$32,128.80", change: 2.5, color: .customOrange, softColor: .softOrange, iconName: "bitcoin", marketCap: "893.43"),
-        MarketCoinModel(name: "Neo",  price: "$13,221.55", change: 2.2, color: .customMint, softColor: .softMint, iconName: "neo", marketCap: "893.43"),
-        MarketCoinModel(name: "Achain", price: "$28,312.22", change: -2.2, color: .customPurple, softColor: .softPurple, iconName: "achain", marketCap: "893.43"),
-        MarketCoinModel(name: "Vechain", price: "$14,112.86", change: 2.5, color: .customPurple, softColor: .softPurple, iconName: "vechain", marketCap: "893.43"),
-        MarketCoinModel(name: "Vitae", price: "$14,112.86", change: 2.2, color: .customMint, softColor: .softMint, iconName: "vitae", marketCap: "893.43")
-    ]
     
     var body: some View {
         NavigationView {
             ZStack{
                 
                 backgroundView
-
-                VStack(alignment: .center){
-                    headerView
-                    textFieldView
-                    segmentedControlView
-                    cryptoCoinListView
-                    Spacer()
+                
+                ScrollView{
+                    VStack(alignment: .center){
+                        textFieldView
+                        segmentedControlView
+                        cryptoCoinListView
+                        Spacer()
+                    }
+                    .padding()
                 }
-                .padding()
-            }
+                
+            }.navigationBarTitle("Market", displayMode: .large)
         }
     }
     var backgroundView : some View {
@@ -54,8 +46,8 @@ struct MarketView: View {
     var cryptoCoinListView : some View {
         ScrollView {
             VStack(spacing: 16) {
-                ForEach(cryptoData) { crypto in
-                    CryptoRowView(coinModel: crypto)
+                ForEach(viewModel.filteredCoins) { coin in
+                    CryptoRowView(coinModel: coin)
                 }
             }
         }
@@ -83,7 +75,7 @@ struct MarketView: View {
                         .foregroundColor(.appSecondaryText)
                         .padding([.top, .bottom] , 16)
                         .padding( .leading, 6)
-
+                    
                     
                     TextField("Search", text: $viewModel.searchText)
                         .foregroundStyle(.blackText)
@@ -126,60 +118,86 @@ struct MarketView: View {
     MarketView()
 }
 
-
-struct SegmentButton: View {
-    var icon: String
-    var title: String
-    var softColor : Color
-    var mainColor : Color
+struct CryptoRowView: View {
+    var coinModel: CoinModel
     
     var body: some View {
-        VStack {
-            VStack {
-                CircleIcon(softColor: softColor, color: mainColor, iconName: icon, frame: 40, padding: 8, isSystemIcon: true)
+        NavigationLink(destination: CoinDetailView(coin: coinModel)){
+            HStack {
+                AsyncImage(url: URL(string: coinModel.iconName)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                    } else if phase.error != nil {
+                        ZStack {
+                            Circle()
+                                .fill(Color.gray)
+                                .frame(width: 40, height: 40)
+                            Text(coinModel.name.prefix(1))
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        }
+                    } else {
+                        ProgressView()
+                            .frame(width: 40, height: 40)
+                    }
+                }
+                VStack(alignment: .leading) {
+                    Text(coinModel.name)
+                        .frame(width: 120, alignment: .leading)
+                        .foregroundStyle(.blackText)
+                        .font(.headline)
+                        .lineLimit(1)
+                    Text("\(String(format: "%.1f",  coinModel.change))%")
+                        .font(.subheadline)
+                        .foregroundColor(coinModel.change > 0 ? .customMint : .customRed)
+                }
                 
-                Text(title)
-                    .foregroundStyle(.blackText)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                if let sparkline = coinModel.sparkline {
+                    LineChart(data: sparkline, change: coinModel.change)
+                        .frame(width: 50, height: 30, alignment: .center)
+                }
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text("$ \(coinModel.price)")
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(1)
+                        .foregroundStyle(.blackText)
+                        .font(.headline)
+                    Text(String(coinModel.marketCap!))
+                        .font(.caption)
+                        .foregroundColor(.appSecondaryText)
+                }
             }
-            .padding(.vertical, 26)
-            .frame(width: UIScreen.main.bounds.width / 3.7)
+            .padding(.vertical, 8)
         }
-        .background(Color.customWhite)
-        .cornerRadius(25)
-        .shadow(color: .appSecondaryText.opacity(0.2), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        
     }
 }
 
-struct CryptoRowView: View {
-    var coinModel: MarketCoinModel
-    
+
+struct LineChart: View {
+    var data: [Double]
+    var change: Double
+
     var body: some View {
-        HStack {
-            CircleIcon(softColor: coinModel.softColor, color: coinModel.color, iconName: coinModel.iconName, frame: 50, padding: 8, isSystemIcon: false)
-            VStack(alignment: .leading) {
-                Text(coinModel.name)
-                    .foregroundStyle(.blackText)
-                    .font(.headline)
-                Text("\(String(format: "%.1f",  coinModel.change))%")
-                    .font(.subheadline)
-                    .foregroundColor(coinModel.change > 0 ? .customMint : .customRed)
-            }
-            
-            Spacer()
-            
-            VStack(alignment: .trailing) {
-                Text("\(coinModel.price)")
-                    .foregroundStyle(.blackText)
-                    .font(.headline)
-                Text("MCap $\(coinModel.marketCap) Bn")
-                    .font(.subheadline)
-                    .foregroundColor(.appSecondaryText)
+        let lineColor = change > 0 ? Color.customMint : Color.customRed
+        let minValue = data.min() ?? 0
+        let maxValue = data.max() ?? 1
+
+        Chart {
+            ForEach(data.indices, id: \.self) { index in
+                LineMark(
+                    x: .value("Index", index),
+                    y: .value("Value", data[index])
+                )
+                .foregroundStyle(lineColor)
             }
         }
-        .padding(.vertical, 4)
-        
+        .chartYScale(domain: minValue...maxValue)
+        .chartXAxis(.hidden)
+        .chartYAxis(.hidden)
+        .frame(height: 30)
     }
 }

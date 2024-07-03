@@ -8,6 +8,26 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    @Published var trends = [CoinModel]()
+    
+    private var coinService = CoinServices()
+    
+    init() {
+        fetchTrends()
+    }
+    
+    func fetchTrends() {
+        coinService.fetchCoins { [weak self] result in
+            switch result {
+            case .success(let coins):
+                DispatchQueue.main.async {
+                    self?.trends = coins.sorted(by: { $0.rank! < $1.rank! }).prefix(15).map { $0 }
+                }
+            case .failure(let error):
+                print("Failed to fetch trends: \(error)")
+            }
+        }
+    }
     
     func learnModeButtonPressed() {
         print("Learn More Button Pressed")

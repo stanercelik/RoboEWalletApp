@@ -16,6 +16,8 @@ struct CircleIcon: View {
     let frame: Double?
     let padding: Double?
     let isSystemIcon: Bool?
+    let imageFrame: Double?
+    let iconWeight: Font.Weight?
     
     init(cryptoCurrency: CryptoCurrency? = nil,
          softColor: Color? = Color.softMint,
@@ -23,7 +25,9 @@ struct CircleIcon: View {
          iconName: String? = "alert",
          frame: Double? = 40,
          padding: Double? = 8,
-         isSystemIcon: Bool? = false) {
+         isSystemIcon: Bool? = false,
+         imageFrame: Double? = 40,
+         iconWeight: Font.Weight = .regular) {
         self.cryptoCurrency = cryptoCurrency
         self.softColor = softColor
         self.color = color
@@ -31,6 +35,8 @@ struct CircleIcon: View {
         self.frame = frame
         self.padding = padding
         self.isSystemIcon = isSystemIcon
+        self.imageFrame = imageFrame
+        self.iconWeight = iconWeight
     }
     
     var body: some View {
@@ -43,7 +49,8 @@ struct CircleIcon: View {
                 Image(systemName: cryptoCurrency?.iconName ?? iconName ?? "alert")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: (frame ?? 40) * 0.5, height: (frame ?? 40) * 0.5)
+                    .frame(width: (imageFrame ?? 40) * 0.5, height: (imageFrame ?? 40) * 0.5)
+                    .fontWeight(iconWeight)
                     .foregroundStyle(cryptoCurrency?.color ?? color ?? Color.customMint)
             } else {
                 Image(cryptoCurrency?.iconName ?? iconName ?? "alert")

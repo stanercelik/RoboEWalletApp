@@ -17,5 +17,4 @@ struct MarketCoinModel: Identifiable  {
     var softColor : Color
     var iconName : String
     var marketCap : String
-    
 }

@@ -6,17 +6,13 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+import SDWebImageSVGKitPlugin
+import SwiftUICharts
 
 
 struct HomeView: View {
     @StateObject private var viewmodel = HomeViewModel()
-    let trends = [
-        TrendModel(name: "Bitcoin", code: "BTC", price: "$32,128.80", change: 2.5, color: .customOrange, softColor: .softOrange, iconName: "bitcoin"),
-        TrendModel(name: "Neo", code: "NEO", price: "$13,221.55", change: 2.2, color: .customMint, softColor: .softMint, iconName: "neo"),
-        TrendModel(name: "Achain", code: "ACT", price: "$28,312.22", change: -2.2, color: .customPurple, softColor: .softPurple, iconName: "achain"),
-        TrendModel(name: "Vechain", code: "VCH", price: "$14,112.86", change: 2.5, color: .customPurple, softColor: .softPurple, iconName: "vechain"),
-        TrendModel(name: "Vitae", code: "VTA", price: "$14,112.86", change: 2.2, color: .customMint, softColor: .softMint, iconName: "vitae")
-    ]
     
     var body: some View {
         NavigationView {
@@ -29,6 +25,7 @@ struct HomeView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }
+    
     var backgroundView: some View {
         Color.homeScreenBackground
             .ignoresSafeArea()
@@ -36,11 +33,10 @@ struct HomeView: View {
     
     var headerView: some View {
         VStack(alignment: .leading, spacing: 12) {
-            
             HeaderWithEllipsis(text: "Home", color: .whiteText, backgroundColor: .customWhite)
             
-            HStack (alignment: .top){
-                VStack (alignment: .leading){
+            HStack (alignment: .top) {
+                VStack (alignment: .leading) {
                     Text("Affiliate program")
                         .font(.title2)
                         .foregroundStyle(.whiteText)
@@ -61,7 +57,7 @@ struct HomeView: View {
     var baseView: some View {
         VStack {
             Spacer()
-            VStack (alignment: .leading){
+            VStack (alignment: .leading) {
                 buttonsView
                 trendingView
                 Spacer()
@@ -75,7 +71,7 @@ struct HomeView: View {
     }
     
     var trendingView: some View {
-        VStack (alignment: .leading){
+        VStack(alignment: .leading) {
             Text("Trending")
                 .foregroundStyle(Color.blackText)
                 .font(.title)
@@ -83,32 +79,33 @@ struct HomeView: View {
                 .padding(.horizontal)
                 .padding(.top, 8)
             
-            ScrollView{
-                ForEach(trends, id: \.name) { trend in
+            ScrollView {
+                ForEach(viewmodel.trends) { trend in
                     TrendRow(trend: trend)
                 }
             }
             .scrollIndicators(.hidden)
-            
         }
     }
     
     var buttonsView: some View {
-        HStack(){
-            VStack(alignment: .leading){
+        HStack {
+            VStack(alignment: .leading) {
                 Pill(iconColor: .customRed, iconSoftColor: .softRed, iconName: "calculator_icon", buttonName: "Calculator")
-                    .gesture(TapGesture()
-                        .onEnded({ _ in
-                            print("sad")
-                        }))
-                
-                Pill(iconColor: .customOrange, iconSoftColor: .softOrange, iconName: "convert_icon", buttonName: "Convert")
+                    .gesture(TapGesture().onEnded({ _ in
+                        print("sad")
+                    }))
+                NavigationLink(destination: ConverterView().navigationBarBackButtonHidden(true)) {
+                    Pill(iconColor: .customOrange, iconSoftColor: .softOrange, iconName: "convert_icon", buttonName: "Convert")
+                }
             }
             Spacer()
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 Pill(iconColor: .customBlue, iconSoftColor: .softBlue, iconName: "compare_icon", buttonName: "Compare")
                 
-                Pill(iconColor: .customPurple, iconSoftColor: .softPurple, iconName: "price_alert_icon", buttonName: "Price Alert")
+                NavigationLink(destination: PriceAlertView().navigationBarBackButtonHidden(true)) {
+                    Pill(iconColor: .customPurple, iconSoftColor: .softPurple, iconName: "price_alert_icon", buttonName: "Price Alert")
+                }
             }
         }
         .padding(.init(top: 24, leading: 32, bottom: 0, trailing: 52))
@@ -116,77 +113,60 @@ struct HomeView: View {
 }
 
 struct TrendRow: View {
-    var trend: TrendModel
+    var trend: CoinModel
     
     var body: some View {
-        HStack {
-            CircleIcon(softColor: trend.softColor, color: trend.color, iconName: trend.iconName, frame: 40, padding: 0, isSystemIcon: false)
-            VStack(alignment: .leading) {
-                Text(trend.name)
-                    .foregroundStyle(Color.blackText)
-                    .font(.headline)
-                Text(trend.code)
-                    .font(.subheadline)
-                    .foregroundColor(.appSecondaryText)
-            }
-            .padding(.leading, 6)
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(trend.price)
-                    .foregroundStyle(.blackText)
-                    .font(.headline)
+        NavigationLink(destination: CoinDetailView(coin: trend)) {
+            HStack {
+                AsyncImage(url: URL(string: trend.iconName)) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                    } else if phase.error != nil {
+                        ZStack {
+                            Circle()
+                                .fill(Color.gray)
+                                .frame(width: 40, height: 40)
+                            Text(trend.name.prefix(1))
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        }
+                    } else {
+                        ProgressView()
+                            .frame(width: 40, height: 40)
+                    }
+                }
+                VStack(alignment: .leading) {
+                    Text(trend.name)
+                        .foregroundStyle(.blackText)
+                        .font(.headline)
+                        .lineLimit(1)
+                    Text(trend.code)
+                        .font(.subheadline)
+                        .foregroundColor(.appSecondaryText)
+                }
+                .padding(.leading, 6)
                 Spacer()
-                Text("\(trend.change >= 0 ? "+" : "")\(String(format: "%.1f",  trend.change))%")
-                    .font(.subheadline)
-                    .foregroundColor(trend.change >= 0 ? .customMint : .customRed)
+                VStack(alignment: .trailing) {
+                    Text(trend.price)
+                        .foregroundStyle(.blackText)
+                        .font(.headline)
+                    Spacer()
+                    Text("\(trend.change >= 0 ? "+" : "")\(String(format: "%.1f", trend.change))%")
+                        .font(.subheadline)
+                        .foregroundColor(trend.change >= 0 ? .customMint : .customRed)
+                }
             }
-        }
-        .padding(.horizontal)
-        .padding(.vertical, 12)
-    }
-}
-
-struct Pill : View {
-    let iconColor: Color
-    let iconSoftColor : Color
-    let iconName : String
-    let buttonName : String
-    
-    var body: some View {
-        HStack (spacing: 4){
-            CircleIcon(softColor: iconSoftColor, color: iconColor, iconName: iconName, frame: 40, padding: 6, isSystemIcon: false)
-            
-            Text(buttonName)
-                .foregroundStyle(.blackText)
-                .font(.system(size: 15, weight: .regular))
-        }
-    }
-}
-
-struct HeaderWithEllipsis: View {
-    var text: String
-    var color: Color
-    var backgroundColor: Color
-    var body: some View {
-        HStack (alignment: .center){
-            Text(text)
-                .font(.largeTitle)
-                .foregroundStyle(color)
-                .bold()
-            
-            Spacer()
-            
-            CircleIcon(softColor: backgroundColor, color: .blackText, iconName: "ellipsis", frame: 45, padding: 12, isSystemIcon: true)
+            .padding(.horizontal)
+            .padding(.vertical, 12)
         }
     }
 }
 
 
-#Preview{
+
+#Preview {
     HomeView()
 }
-
-
-
-
-

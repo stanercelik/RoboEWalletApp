@@ -8,22 +8,7 @@
 import SwiftUI
 
 struct InsightsView: View {
-    
-    let achainNews : [NewsModel] = [
-    NewsModel(isFullWidthNews: true, image: "achain_news", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "3 days ago")
-    ]
-    
-    let bitcoinNews : [NewsModel] = [
-    NewsModel(isFullWidthNews: false, image: "bitcoin_news_1", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "2 days ago"),
-    NewsModel(isFullWidthNews: false, image: "bitcoin_news_2", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "2 days ago")
-    ]
-    
-    let neoNews : [NewsModel] = [
-    NewsModel(isFullWidthNews: false, image: "bitcoin_news_1", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "1 days ago"),
-    NewsModel(isFullWidthNews: false, image: "bitcoin_news_2", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "2 days ago"),
-    NewsModel(isFullWidthNews: false, image: "bitcoin_news_1", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "3 days ago"),
-    NewsModel(isFullWidthNews: false, image: "bitcoin_news_2", text: "Participate in the Corra Finance Airdrop on CoinMarketCap", date: "6 days ago")
-    ]
+    @StateObject private var viewmodel = InsightsViewModel()
     
     var body: some View {
         NavigationView {
@@ -35,10 +20,10 @@ struct InsightsView: View {
                     HeaderWithEllipsis(text: "Insights", color: .blackText, backgroundColor: .customWhite)
                     
                     ScrollView{
-                        CryptoNews(cryptoName: "Achain", crypto: .achain, newsList: achainNews)
+                        CryptoNews(cryptoName: "Achain", crypto: .achain, newsList: viewmodel.achainNews)
                         
-                        CryptoNews(cryptoName: "Bitcoin", crypto: .bitcoin, newsList: bitcoinNews)
-                        CryptoNews(cryptoName: "Neo", crypto: .neo, newsList: neoNews)
+                        CryptoNews(cryptoName: "Bitcoin", crypto: .bitcoin, newsList: viewmodel.bitcoinNews)
+                        CryptoNews(cryptoName: "Neo", crypto: .neo, newsList: viewmodel.neoNews)
                         
                     }
                     

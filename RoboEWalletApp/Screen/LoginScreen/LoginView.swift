@@ -76,11 +76,25 @@ struct customTextField: View {
 
 struct RobotView: View {
     var body: some View {
-        ZStack(alignment: .center) {
-            Image("robot_background_light")
-            Image("robot_background")
-                .padding(.top, 40)
-            Image("robot")
+        GeometryReader { geometry in
+            ZStack(alignment: .center) {
+                Image("robot_background_light")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    
+                
+                Image("robot_background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    
+                    .padding(.top, 40)
+                
+                Image("robot")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height )
         }
     }
 }
